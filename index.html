@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo App</title>
     <link rel="stylesheet" href="main.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1 class="title">Todo List</h1>
+    <h2 class="title">Todo List</h1>
     <div class="all-lists">
         <h2 class="task-list-title">My lists</h2>
-        <ul class="task-list">
-            <li class="list-name 
+        <ul class="task-list" data-lists>
+            <!-- <li class="list-name 
                 active-list">List 1</li>
             <li class="list-name">List 2</li>
-            <li class="list-name">List 3</li>
+            <li class="list-name">List 3</li> -->
         </ul>
 
         <div class="new-list-creator">
-            <form action="">
+            <form action="" data-new-list-form>
                 <input type="text"
                 class="new list"
+                data-new-list-input
                 placeholder="new list name"
                 aria-label="new list name"
                 />
@@ -29,14 +31,15 @@
             </form>
         </div>
     </div>
-    <div class="todo-list">
+    <div class="todo-list" data-list-display-container>
         <div class="todo-header">
-                <h2 class="todo-title">List Name</h2>
-                <p class="task-count">3 tasks remaining</p>     
+                <h2 class="todo-title" data-list-title>List Name</h2>
+                <p class="task-count" data-list-count>3 tasks remaining</p>     
         </div>
 
             <div class="todo-body">
-                <div class="tasks">
+                <div class="tasks" data-tasks>
+                    <!-- 
                     <div class="task">
                         <input type="checkbox"
                         id="task-1"
@@ -45,48 +48,38 @@
                             <span class="custom-checkbox"></span>
                             Go shopping
                         </label>
-                    </div>
-                    <!--end task-->
-                    <div class="task">
-                        <input type="checkbox"
-                        id="task-2"
-                        />
-                        <label for="task-2">
-                            <span class="custom-checkbox"></span>
-                            Clean up
-                        </label>
-                    </div>
-                    <!--end task-->
-                    <div class="task">
-                        <input type="checkbox"
-                        id="task-3"
-                        />
-                        <label for="task-3">
-                            <span class="custom-checkbox"></span>
-                            Sleep
-                        </label>
-                    </div>
-                    <!--end task-->
-                    
+                    </div> -->             
                 </div>
                
 
                 <div class="new-task-creator">
-                    <form action="">
+                    <form action="" data-new-task-form>
                         <input type="text"
                         class="new task"
                         placeholder="new task name" 
                         aria-label="new task name"
+                        data-new-task-input
                         />
                         <button class="btn create"
                         aria-label="create new task">+</button>
                     </form>
                 </div>
                 <div class="task-deleter">
-                    <button class="btn-delete">Clear completed tasks</button>
-                    <button class="btn-delete">Delete list</button>
+                    <button class="btn delete"
+                    data-clear-completed-tasks-button>Clear completed tasks</button>
+                    <button class="btn delete" 
+                    data-delete-list-button>Delete list</button>
                 </div>
             </div>
     </div>
+    <template id = "task-template"> 
+        <div class="task">
+            <input type="checkbox"
+            />
+            <label>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
 </body>
 </html>
